@@ -45,8 +45,9 @@ app.post('/todos', (req, res) => {
 
 
 //update
-app.put('/todos', (req, res) => {
-    const id = req.body.id
+app.put('/todos/:id', (req, res) => {
+     
+    
 
 
 })
