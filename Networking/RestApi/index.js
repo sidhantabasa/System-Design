@@ -1,6 +1,9 @@
 import express from "express";
+import bodyParser from "body-parser";
 
 const app = express();
+
+app.use(bodyParser.json())
 
 app.all('/', (req, res) => {
     res.send('Hello World!')
@@ -26,10 +29,27 @@ app.get('/todos', (req, res) => {
 
 
 })
+ 
+
 
 //create
 
+app.post('/todos', (req, res) => {
+    const newTodo = req.body
+    todos.push(newTodo);
+    res.json({
+        message:"new todo added"
+    })
+})
+
+
+
 //update
+app.put('/todos', (req, res) => {
+    const id = req.body.id
+
+
+})
 
 //delete
 
