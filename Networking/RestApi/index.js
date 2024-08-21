@@ -14,7 +14,7 @@ const todos = [{
     title: 'Buy milk',
     completed: false
 },
-{
+{  
     id: 2,
     title: 'Buy coffee',
     completed: true
