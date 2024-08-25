@@ -62,7 +62,22 @@ app.put('/todos/:id', (req, res) => {
 });
 
 //delete
+app.delete('/todos/:id', (req, res) => {
+    const { id } = req.params;
+    const index = todos.findIndex(todo => todo.id === parseInt(id));
 
+    if (index !== -1) {
+        const deletedTodo = todos.splice(index, 1);
+        res.json({
+            message: "Todo deleted successfully",
+            todo: deletedTodo[0],
+        });
+    } else {
+        res.status(404).json({
+            message: "Todo not found",
+        });
+    }
+});
 
 
 
