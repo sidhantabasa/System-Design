@@ -26,8 +26,6 @@ const todos = [{
 //read
 app.get('/todos', (req, res) => {
     res.json(todos)
-
-
 })
  
 
@@ -46,11 +44,22 @@ app.post('/todos', (req, res) => {
 
 //update
 app.put('/todos/:id', (req, res) => {
-     
-    
+    const { id } = req.params; // Get the id from the URL
+    const updatedTodo = req.body; // Get the updated data from the request body
+    const index = todos.findIndex(todo => todo.id === parseInt(id));
 
-
-})
+    if (index !== -1) {
+        todos[index] = { ...todos[index], ...updatedTodo };
+        res.json({
+            message: "Todo updated successfully",
+            todo: todos[index],
+        });
+    } else {
+        res.status(404).json({
+            message: "Todo not found",
+        });
+    }
+});
 
 //delete
 
