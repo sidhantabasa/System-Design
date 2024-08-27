@@ -12,7 +12,7 @@ app.all('/', (req, res) => {
 const todos = [{
     id: 1,
     title: 'Buy milk',
-    completed: false
+    completed: true
 },
 {  
     id: 2,
