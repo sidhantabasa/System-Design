@@ -1,9 +1,11 @@
 import express from "express";
 import bodyParser from "body-parser";
- 
+
+  
 const app = express(); 
   
 app.use(bodyParser.json())
+ 
 
 app.all('/', (req, res) => { 
     res.send('Hello World!')
@@ -12,7 +14,7 @@ app.all('/', (req, res) => {
 const todos = [{
     id: 1,
     title: 'Buy milk',
-    completed: false
+    completed: true
 },
 {  
     id: 2,
