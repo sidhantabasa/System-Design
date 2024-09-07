@@ -20,9 +20,7 @@ function App() {
 
     startPolling();
 
-    return () => {
-      // Optional: Cleanup
-    };
+   
   }, []);
 
   return (

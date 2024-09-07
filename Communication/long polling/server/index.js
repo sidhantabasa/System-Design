@@ -29,7 +29,7 @@ app.get('/get-messages', (req, res) => {
 setInterval(() => {
   const newMessage = 'New message at ' + new Date().toLocaleTimeString();
   messages.push(newMessage);
-}, 10000);
+}, 5000);
 
 app.listen(5000, () => {
   console.log('Backend running on port 5000');
