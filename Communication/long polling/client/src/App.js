@@ -23,6 +23,7 @@ function App() {
    
   }, []);
 
+  
   return (
     <div>
       <h1>Testing Long Polling</h1>
