@@ -6,7 +6,7 @@
   <title>SSE Example</title>
 </head>
 <body>
-  <h1>Real-time Clock</h1>
+  <h1>Real-time Clock example of SSE</h1>
   <div id="time"></div>
 
   <script>
@@ -14,7 +14,8 @@
 
     eventSource.onmessage = function(event) {
       document.getElementById('time').textContent = event.data;
-    };
+    
+};
   </script>
 </body>
 </html>
