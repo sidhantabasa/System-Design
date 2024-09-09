@@ -4,6 +4,7 @@ function App() {
   const [messages, setMessages] = useState([]);
 
   useEffect(() => {
+    
     const startPolling = async () => {
       try {
         const response = await fetch('http://localhost:5000/get-messages');
