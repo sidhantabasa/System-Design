@@ -15,18 +15,27 @@
     // Establish WebSocket connection
     const socket = new WebSocket('ws://localhost:8080');
 
-    // Display incoming messages
+    // Make sure WebSocket sends/receives data as text
+    socket.binaryType = "blob"; // Set the type of binary data
+
+    // Display incoming messages as text
     socket.onmessage = function(event) {
       const chat = document.getElementById('chat');
-      chat.innerHTML += `<p>${event.data}</p>`;
+      const reader = new FileReader();
+      
+      // Convert Blob to text before displaying
+      reader.onload = function() {
+        chat.innerHTML += `<p>${reader.result}</p>`;
+      };
+      reader.readAsText(event.data);
     };
 
-    // Send a message to the server when the "Send" button is clicked
+    // Send a message to the server as text when the "Send" button is clicked
     document.getElementById('sendButton').onclick = function() {
       const input = document.getElementById('messageInput');
       if (input.value) {
-        socket.send(input.value); // Send message to the server
-        input.value = ''; // Clear the input field after sending
+        socket.send(input.value); // Send message as plain text to the server
+        input.value = ''; // Clear input field
       }
     };
   </script>
