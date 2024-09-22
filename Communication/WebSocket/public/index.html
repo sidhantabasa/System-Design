@@ -72,7 +72,7 @@
     socket.onmessage = function(event) {
       console.log('Received message:', event.data);
       console.log("check")
-      // Check if the received data is a Blob
+      // Check if the received data is a Blob  
       if (event.data instanceof Blob) {
         const reader = new FileReader();
         reader.onload = function() {
