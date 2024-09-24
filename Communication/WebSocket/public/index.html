@@ -83,7 +83,7 @@
           chat.innerHTML += `<p class="${messageClass}">${message.content}</p>`;
           chat.scrollTop = chat.scrollHeight; // Auto-scroll to the bottom
         };
-        reader.readAsText(event.data); // Read the Blob as text
+        reader.readAsText(event.data); // Read the Blob as text 
       } else {
         // Handle non-Blob data (text)
         const chat = document.getElementById('chat');
