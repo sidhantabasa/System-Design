@@ -81,7 +81,7 @@
 
           const messageClass = message.clientId === clientId ? 'client-message' : 'server-message';
           chat.innerHTML += `<p class="${messageClass}">${message.content}</p>`;
-          chat.scrollTop = chat.scrollHeight; // Auto-scroll to the bottom
+          chat.scrollTop = chat.scrollHeight; // Auto-scroll to the bottom 
         };
         reader.readAsText(event.data); // Read the Blob as text 
       } else {
