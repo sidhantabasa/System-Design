@@ -19,7 +19,7 @@ app.get('/events', (req, res) => {
     res.end();
   });
 });
-  
+   
 app.listen(3000, () => {
   console.log('SSE server running on port 3000');
 });
