@@ -16,7 +16,7 @@ app.get('/get-messages', (req, res) => {
         messages = [];
         clearInterval(interval);
       }
-    }, 1000); // Check every 1 second     
+    }, 1000); // Check every 1 second    
 
     setTimeout(() => {
       clearInterval(interval);
